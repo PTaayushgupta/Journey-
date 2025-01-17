@@ -51,7 +51,7 @@ const sessionOptions = {
     }
 };
 
-//index route 
+
 
 app.get('/',(req,res)=>{
     res.send('hi, i am root ')
@@ -84,21 +84,6 @@ app.use((req,res,next)=>{
 
     next()
 })
-
-//registering users 
-
-// app.get("/demouser",async(req,res)=>{
-//     let fakeUser = new User({
-//         email: "aayushgupta@gmail.com",
-//         username: "protrader"
-//     })
-//   let newRegister = await  User.register(fakeUser,"password")
-//   res.send(newRegister)
-// })
-
-
-
-
 
 
  app.use("/listings",listingsRouter)
