@@ -31,6 +31,7 @@ module.exports.createListings = async (req,res)=>{
     if(!req.body.listing){
         throw new ExpressError(400,"send valid data for listing")
     }
+    req.body.listing.url = req.body.listing.image;
     let newListing = new Listing(req.body.listing)
     newListing.owner = req.user._id
     await newListing.save()
