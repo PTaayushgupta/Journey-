@@ -11,11 +11,14 @@ const listingSchema = new Schema({
     description: String,
     url: {
         type: String,
+        set : (v)=> (!v || v.trim() === "" ? "https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?cs=srgb&dl=pexels-pixabay-38238.jpg&fm=jpg"
+            : v),
         default:"https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?cs=srgb&dl=pexels-pixabay-38238.jpg&fm=jpg",
         
-            set:(v)=> v ===""?"https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?cs=srgb&dl=pexels-pixabay-38238.jpg&fm=jpg"
-        : v,
+           
     },
+    
+    
     price: Number,
     location: String,
     country: String,

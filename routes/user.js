@@ -11,7 +11,7 @@ router.get("/signup",userController.renderSignupForm)
 
 router.post("/Signup",wrapasync(userController.Signup)
 )
-
+ 
 
 router.get("/login", userController.renderLoginForm )
 
