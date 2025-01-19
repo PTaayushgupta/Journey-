@@ -52,7 +52,7 @@ module.exports.renderEditForm =  async (req,res)=>{
 
 module.exports.updateListing = async (req,res)=>{
     let {id} = req.params
-    
+    req.body.listing.url = req.body.listing.image;
     await Listing.findByIdAndUpdate(id,{...req.body.listing})
     req.flash("success","Data updated!")
 
